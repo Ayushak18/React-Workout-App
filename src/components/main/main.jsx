@@ -7,19 +7,7 @@ export const Main = () => {
   return (
     <>
       <Box w={"75%"} px={"10"}>
-        {showform ? (
-          <DetailsForm setShowForm={setShowForm} />
-        ) : (
-          <Flex alignItems={"center"} justifyContent={"center"} minH={"100vh"}>
-            <Spinner
-              thickness="4px"
-              speed="0.65s"
-              emptyColor="#fff"
-              color="#2982cc"
-              size="xl"
-            />
-          </Flex>
-        )}
+        <DetailsForm />
       </Box>
     </>
   );
