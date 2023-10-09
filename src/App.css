@@ -128,9 +128,14 @@ table {
 /* CSS reset End */
 
 .App {
-  background-color: #e7e9ea;
+  background-color: #cfe4f7;
   min-height: 100vh;
   font-family: "Dela Gothic One", cursive;
+}
+
+.submit-button {
+  background: transparent;
+  cursor: pointer;
 }
 
 /* .App-logo {
