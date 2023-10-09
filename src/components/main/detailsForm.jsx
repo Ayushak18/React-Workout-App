@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { GPT_TOKEN } from "../../env_file";
 
 export const DetailsForm = () => {
   const [formInput, setFormInput] = useState("");
@@ -38,7 +37,7 @@ export const DetailsForm = () => {
         "Content-Type": "application/json",
 
         // Tried .env file for securing sensitive data but it is not working for some reason
-        Authorization: `Bearer ${GPT_TOKEN}`,
+        Authorization: `Bearer ${process.env.GPT_TOKEN}`,
       },
       data: data,
     };
