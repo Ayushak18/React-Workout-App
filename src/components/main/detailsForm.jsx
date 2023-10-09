@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { GPT_TOKEN } from "../../env_file";
 
 export const DetailsForm = () => {
   const [formInput, setFormInput] = useState("");
@@ -35,7 +36,9 @@ export const DetailsForm = () => {
       url: "https://api.openai.com/v1/chat/completions",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer ",
+
+        // Tried .env file for securing sensitive data but it is not working for some reason
+        Authorization: `Bearer ${GPT_TOKEN}`,
       },
       data: data,
     };
@@ -49,10 +52,11 @@ export const DetailsForm = () => {
         })
         .catch((error) => {
           alert(error);
+          setLoader(false);
         });
     }
   }, [formInput]);
-  if (workoutData.length === 0 && loader == false) {
+  if (workoutData.length === 0 && loader === false) {
     return (
       <>
         <Box pt={"8"}>
