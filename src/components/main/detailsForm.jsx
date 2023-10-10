@@ -37,7 +37,7 @@ export const DetailsForm = () => {
         "Content-Type": "application/json",
 
         // Tried .env file for securing sensitive data but it is not working for some reason
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
       },
       data: data,
     };
